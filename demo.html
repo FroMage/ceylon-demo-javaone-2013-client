@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JavaLand 2015 demo</title>
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="main.css" rel="stylesheet"/>
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="require.js"></script>
+    <script type="text/javascript">
+    // configure require.js 
+    require.config({
+        baseUrl:'modules',
+        paths:{
+            'ceylon':'file:///home/stephane/.ceylon/repo/ceylon',
+        }
+    });
+    // on load 
+    jQuery(function() {
+    	// load the Ceylon module 
+        require(['client/1.0.0/client-1.0.0'], function(client) {
+        	// callback on button click 
+        	jQuery("#clicky").click(function(){
+                // call the run function in the module 
+                client.run();
+        	});
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>List of modules from the server:</h1>
+    <button id="clicky" class="btn btn-default">Go get'em!</button>
+    <div id="target"></div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.module {
+    margin: 3px 2px;
+    padding: 10px;
+    height: 150px;
+    width: 150px;
+    vertical-align: top;
+    display: inline-block;
+    background: gray;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    word-break: break-all;
+}
+html {
+    padding: 10px;
+}
